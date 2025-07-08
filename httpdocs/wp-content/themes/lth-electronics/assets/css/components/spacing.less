@@ -1,0 +1,55 @@
+
+// vertical spacing to scale at breakpoints (useful for consistent spacing between modules/components)
+// usage: .{margin|padding}-{top|right|bottom|left|y|x}
+
+	:root {
+		--spacing:2em; 
+		@media(min-width:@small) { --spacing:3em; } 
+		@media(min-width:@medium) { --spacing:4em; } 
+		@media(min-width:@large) { --spacing:5em; } 
+	}
+
+	.padding-top, .padding-y { padding-top:var(--spacing) }
+	.padding-bottom, .padding-y { padding-bottom:var(--spacing) }
+	.margin-top, .margin-y { margin-top:var(--spacing) }
+	.margin-bottom, .margin-y { margin-bottom:var(--spacing) }
+
+	.box-padding { padding:var(--spacing) }
+
+	.for-breakpoints({
+		.padding-top\@@{breakpoint}, .padding-y\@@{breakpoint} { padding-top:var(--spacing) }
+		.padding-bottom\@@{breakpoint}, .padding-y\@@{breakpoint} { padding-bottom:var(--spacing) }
+		.margin-top\@@{breakpoint}, .margin-y\@@{breakpoint} { margin-top:var(--spacing) }
+		.margin-bottom\@@{breakpoint}, .margin-y\@@{breakpoint} { margin-bottom:var(--spacing) }
+	});
+
+
+// basic margins with em multiplier
+// usage .{margin|padding}-{top|right|bottom|left}-{x}
+
+	.margin-top-0 { margin-top:0 !important }
+	.margin-right-0 { margin-right:0 !important }
+	.margin-bottom-0 { margin-bottom:0 !important }
+	.margin-left-0 { margin-left:0 !important }
+
+	.padding-top-0 { padding-top:0 !important }
+	.padding-right-0 { padding-right:0 !important }
+	.padding-bottom-0 { padding-bottom:0 !important }
+	.padding-left-0 { padding-left:0 !important }
+
+	.for(5, {
+		@multiplier: 0.5em;
+		.margin-top-@{i} { margin-top:(@i * @multiplier) !important }
+		.margin-right-@{i} { margin-right:(@i * @multiplier) !important }
+		.margin-bottom-@{i} { margin-bottom:(@i * @multiplier) !important }
+		.margin-left-@{i} { margin-left:(@i * @multiplier) !important }
+		.margin-x-@{i} { margin-left:(@i * @multiplier) !important; margin-right:(@i * @multiplier) !important }
+		.margin-y-@{i} { margin-top:(@i * @multiplier) !important; margin-bottom:(@i * @multiplier) !important }
+
+		.padding-top-@{i} { padding-top:(@i * @multiplier) !important }
+		.padding-right-@{i} { padding-right:(@i * @multiplier) !important }
+		.padding-bottom-@{i} { padding-bottom:(@i * @multiplier) !important }
+		.padding-left-@{i} { padding-left:(@i * @multiplier) !important }
+		.padding-x-@{i} { padding-left:(@i * @multiplier) !important; padding-right:(@i * @multiplier) !important }
+		.padding-y-@{i} { padding-top:(@i * @multiplier) !important; padding-bottom:(@i * @multiplier) !important }
+	});

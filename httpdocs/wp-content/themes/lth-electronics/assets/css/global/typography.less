@@ -1,0 +1,183 @@
+
+
+// custom font
+
+	// @font-face {
+	//     font-family: '_____';
+	//     src: url('./../fonts/____.eot?#iefix') format('embedded-opentype'), 
+	//          url('./../fonts/____.woff') format('woff'), 
+	//          url('./../fonts/____.ttf') format('truetype'),
+	//          url('./../fonts/____.otf') format('otf'), 
+	//          url('./../fonts/____.svg#____') format('svg');
+	//     font-weight: normal;
+	//     font-style: normal;
+	// }
+
+
+// reset all headings to basic text styles. 
+// use semantic <h1>, <h2> elements where appropriate based on content flow.
+// use the .heading-1, .heading-2, etc. classes to style headings visually.
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight:normal;
+		font-size:inherit;
+	}
+
+
+// base global text styles
+
+	html {
+		font-family:@main;
+		
+		// use unitless line-height
+		line-height:1.4; 
+	}
+
+	// the main text-based block elements in
+	// use for any paragraph-style text
+
+	p,
+	li,
+	table,
+	blockquote,
+	pre,
+	address,
+	dd, dt, dl, 
+	caption, details, summary {
+		font-size:1em;
+		@media(min-width:@small) {}
+		@media(min-width:@medium) {}
+	}
+
+
+// custom headings
+
+	.heading-1 {
+		font-size:2.1em;
+		line-height:1.05;
+		font-weight: 900;
+		margin-top: 0.6em;
+		margin-bottom: 0.4em;
+		@media(min-width:@x-small) {
+			font-size: 2.1em;
+		}
+		@media(min-width:@small) {
+			font-size: 2.6em;
+		}
+		@media(min-width:@medium) {
+			font-size: 3em;
+		}
+		@media(min-width:@large) {
+			font-size: 3.33em;
+		}
+	}
+
+	.heading-2 {
+		font-size:1.8em;
+		line-height:1.05;
+		margin-top: 0.6em;
+		margin-bottom: 0.4em;
+		@media(min-width:@x-small) {
+			font-size: 1.8em;
+		}
+		@media(min-width:@small) {
+			font-size: 2.3em;
+		}
+		@media(min-width:@medium) {
+			font-size: 3em;
+		}
+	}
+
+
+	.heading-3 {
+		font-size: 1.5em;
+		line-height:1.05;
+		margin-top: 0.6em;
+		margin-bottom: 0.4em;
+		@media(min-width:@x-small) {
+			font-size: 1.5em;
+		}
+		@media(min-width:@small) {
+			font-size: 1.9em;
+		}
+		@media(min-width:@medium) {
+			font-size: 2.4em;
+		}
+		@media(min-width:@large) {
+			font-size: 2.5em;
+		}
+	}
+
+	.heading-4 {
+		font-size: 1.35em;
+		line-height:1.1;
+		margin-top: 0.6em;
+		margin-bottom: 0.4em;
+		@media(min-width:@x-small) {
+			font-size: 1.35em;
+		}
+		@media(min-width:@small) {
+			font-size: 1.7em;
+		}
+		@media(min-width:@medium) {
+			font-size: 2.15em;
+		}
+		@media(min-width:@large) {
+			font-size: 2.25em;
+		}
+	}
+
+	.heading-5 {
+		font-size: 1.22em;
+		line-height:1.2;
+		margin-top: 0.6em;
+		margin-bottom: 0.4em;
+		@media(min-width:@x-small) {
+			font-size: 1.15em;
+		}
+		@media(min-width:@small) {
+			font-size: 1.3em;
+		}
+		@media(min-width:@medium) {
+			font-size: 1.5em;
+		}
+	}
+
+	.heading-6 {
+		font-size: 1.15em;
+		line-height:1.3;
+		margin-top: 0.6em;
+		margin-bottom: 0.4em;
+		@media(min-width:@x-small) {
+			font-size: 1.15em;
+		}
+
+		@media(min-width:@small) {
+			font-size: 1.2em;
+		}
+	}
+
+
+// user-editable content sections
+// for any CMS-editable body text areas, apply '.text-main' and style the basic
+// elements specifically — this reduces effect of global styles on components
+
+	.text-main {
+
+		// basic heading styles
+		h1, h2, h3, h4, h5, h6 {
+
+		}
+
+		// list styles
+		li {
+			margin-bottom:1em;
+		}
+	}
+
+
+// modifiers
+
+.text-white, .text-white a {
+	color:white;
+}

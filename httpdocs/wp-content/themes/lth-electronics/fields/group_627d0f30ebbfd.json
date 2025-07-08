@@ -1,0 +1,143 @@
+{
+    "key": "group_627d0f30ebbfd",
+    "title": "Social media accounts",
+    "fields": [
+        {
+            "key": "field_socialfacebook",
+            "label": "Facebook",
+            "name": "facebook",
+            "type": "url",
+            "instructions": "Enter your Facebook page url",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "http:\/\/",
+            "default_value": ""
+        },
+        {
+            "key": "field_socialtwitter",
+            "label": "Twitter",
+            "name": "twitter",
+            "type": "text",
+            "instructions": "Enter your Twitter handle",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "prepend": "@",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "append": ""
+        },
+        {
+            "key": "field_socialinstagram",
+            "label": "Instagram",
+            "name": "instagram",
+            "type": "text",
+            "instructions": "Enter your Instagram handle",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "@",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_sociallinkedin",
+            "label": "LinkedIn",
+            "name": "linkedin",
+            "type": "url",
+            "instructions": "Enter your LinkedIn page url",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "http:\/\/",
+            "default_value": ""
+        },
+        {
+            "key": "field_socialgoogleplus",
+            "label": "Google+",
+            "name": "googleplus",
+            "type": "url",
+            "instructions": "Enter your Google+ page url",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "http:\/\/",
+            "default_value": ""
+        },
+        {
+            "key": "field_socialglassdoor",
+            "label": "Glassdoor",
+            "name": "glassdoor",
+            "type": "url",
+            "instructions": "Enter your Glassdoor page url",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "http:\/\/",
+            "default_value": ""
+        },
+        {
+            "key": "field_socialyoutube",
+            "label": "YouTube",
+            "name": "youtube",
+            "type": "url",
+            "instructions": "Enter your YouTube page url",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-site-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1652363392
+}

@@ -1,0 +1,104 @@
+/* Mobile icon */ 
+
+.mobile-nav {
+    position: relative;
+
+    margin-left: 1em;
+    width: 33px; height: 22px;
+    z-index: 250;
+
+    cursor: pointer;
+    @media (min-width: @medium) {
+        display: none;
+    }
+}
+
+.mobile-nav span {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    display: block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: all 0.75s @ease;
+}
+
+.mobile-nav span:nth-child(1) {
+    position: absolute;
+    top: 0;
+}
+
+.mobile-nav span:nth-child(2) {
+    position: absolute;
+    top: calc(50% - 1px);
+}
+
+.mobile-nav span:nth-child(3) {
+    position: absolute;
+    top: calc(100% - 1px);
+}
+
+.mobile-nav.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav.open span {
+    background: #000;
+}
+
+.mobile-nav.open span:nth-child(1) ,
+.mobile-nav.open span:nth-child(3) {
+    top: calc(50% - 1px);
+    top: 11px;
+}
+
+.mobile-nav.open span:nth-child(1) {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg); 
+}
+
+.mobile-nav.open span:last-child {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+
+.mobile-nav__cont {
+    display: none;
+    position: absolute;
+    top: 0; right: -90vw;
+    z-index: 75;
+
+    width: 90vw; height: calc(100vh + 1em);
+    background: #000;
+    padding: 4em 2em 2em;
+    align-items: center;
+
+    transition: 0.3s all @ease2;
+    @media (min-width: @medium) {
+        padding: 3em;
+        right: -40vw;
+        width: 40vw;
+        transition: 0.5s all @ease2;
+    }
+    @media (min-width: @large) { padding: 6em 3em 2em }
+    // @media (min-width: @x-large) { padding: 4em }
+}
+
+.mobile-nav__cont.state {
+    display: flex;
+}
+
+.mobile-nav__cont.open {
+    right: 0;
+}
+
+/* Menu items */

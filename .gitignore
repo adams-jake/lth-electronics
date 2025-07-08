@@ -1,0 +1,37 @@
+
+# Ignore hidden system files
+*~
+.DS_Store
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
+
+
+# Ignore node modules and errors
+node_modules
+npm-debug.log
+yarn-error.log
+
+
+# Ignore composer
+/vendor/
+composer.lock
+
+
+# Ignore wordpress
+httpdocs/*
+!httpdocs/wp-content
+httpdocs/wp-content/*
+!httpdocs/wp-content/themes
+!httpdocs/wp-content/mu-plugins
+httpdocs/wp-content/mu-plugins/*
+
+
+# ignore htaccess
+httpdocs/.htaccess
+
+
+# Ignore css & js output
+**/assets/dist/*
+**/assets/css/dist/*
+**/assets/js/dist/*

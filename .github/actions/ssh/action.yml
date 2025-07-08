@@ -1,0 +1,27 @@
+name: "ssh"
+description: "adds private key and fingerprint to known_hosts"
+inputs:
+  ssh-private-key:
+    description: "ssh private key"
+    required: true
+  ssh-host:
+    description: "ssh host"
+    required: true
+  ssh-port:
+    description: "ssh port"
+    default: "22"
+
+runs:
+  using: "composite"
+  steps:
+    - name: install ssh key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ inputs.ssh-private-key }}" >> ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+      shell: bash
+    
+    - name: add fingerprint to known_hosts
+      run: |
+        ssh-keyscan -H -p "${{ inputs.ssh-port }}" "${{ inputs.ssh-host }}" >> ~/.ssh/known_hosts
+      shell: bash

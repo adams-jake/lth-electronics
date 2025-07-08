@@ -1,0 +1,26 @@
+name: deploy to live
+
+on:
+  push:
+    branches: 
+      - live
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/build
+
+      - uses: ./.github/actions/ssh
+        with:
+          ssh-host: "HOST_NAME"
+          ssh-private-key: "${{ secrets.SSH_PRIVATE_KEY }}"
+        
+      - name: copy files
+        if: github.ref == 'refs/heads/live'
+        run: |
+          rsync -mrchivz --times --omit-dir-times --delete-after \
+          ./httpdocs/wp-content/themes/THEME_NAME \
+          USER@HOST_NAME:path/to/wp-content/themes

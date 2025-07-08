@@ -1,0 +1,87 @@
+:root {
+	--accordion-padding: 1.8em;
+	--accordion-icon-size: 1.8em;
+	--accordion-icon-gap: 1.5em;
+	--accordion-icon-color: white;
+	--accordion-icon-width: 2px;
+	--accordion-border-color: rgba(0,0,0,0.1);
+}
+
+.accordion.bg--dark-blue {
+	background-image: url('/wp-content/themes/direct-line/assets/img/sunray-grad.svg');
+	background-position: center;
+
+}
+
+.accordion__button {
+	border:0;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	width:100%;
+	font:inherit;
+	text-align:inherit;
+	background: transparent;
+	padding: 1.5em 0;
+	border-bottom: 1px solid var(--accordion-border-color);
+}
+
+.accordion__title {
+	width: calc(100% - var(--accordion-icon-size) - var(--accordion-icon-gap));
+	font-size: 1.12
+	5rem;
+
+	@media (min-width: @medium) {
+		font-size: 1.25rem;
+	}
+}
+
+.accordion__icon {
+	width: var(--accordion-icon-size); height: var(--accordion-icon-size);
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	margin-left: var(--accordion-icon-gap);
+    background: black;
+}
+
+.accordion__icon::before,
+.accordion__icon::after {
+	content: "";
+	display: block;
+	height: var(--accordion-icon-width);
+	width: 0.75em;
+	position: absolute;
+	transition: 0.3s all ease-in-out;
+}
+
+.accordion__icon::before {
+	background: var(--accordion-icon-color);
+}
+
+.accordion__icon::after {
+	background: var(--accordion-icon-color);
+	transform: rotate(-90deg);
+}
+
+.is-open .accordion__icon::before {
+	transform: rotate(90deg);
+	width: 0;
+}
+
+.is-open .accordion__icon::after {
+	background: var(--accordion-icon-color);
+	transform: rotate(0deg);
+}
+
+.accordion__content {
+	overflow: hidden;
+	transition: 0.3s all ease-in-out;
+}
+
+.accordion__content__inner {
+	background: transparent;
+	padding: var(--accordion-padding) 0;
+}

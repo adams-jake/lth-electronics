@@ -1,0 +1,41 @@
+.tns-outer button {
+    display: none;
+}
+
+.tns-outer .tns-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.tns-outer .tns-nav button {
+    display: inline-block;
+    width: 1em; height: 1em;
+    margin: 0 0.3em;
+
+    background: transparent;
+    border: 1px solid @black;
+    appearance: 0;
+    border-radius: 100%;
+    opacity: 1;
+
+    cursor: pointer;
+}
+
+.tns-outer .tns-nav button.tns-nav-active {
+    background: @black;
+}
+
+.bg--black .tns-outer .tns-nav button {
+    border: 1px solid @white;
+}
+
+.bg--black .tns-outer .tns-nav button.tns-nav-active {
+    background: @white;
+}
+
+
+
+
+
