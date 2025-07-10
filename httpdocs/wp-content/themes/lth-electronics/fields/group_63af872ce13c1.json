@@ -6,6 +6,7 @@
             "key": "field_63af9ab8cc7f2",
             "label": "Modules",
             "name": "modules",
+            "aria-label": "",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -26,6 +27,7 @@
                             "key": "field_63b1f3cecef64",
                             "label": "Introduction",
                             "name": "introduction",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -36,7 +38,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_63b1f3a0ed97b"
+                                "group_686fcc35a9b6b"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -57,6 +59,7 @@
                             "key": "field_63af9ac3cc7f3",
                             "label": "Image and text",
                             "name": "image_and_text",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -88,6 +91,7 @@
                             "key": "field_63e5552240f0f",
                             "label": "Call to action",
                             "name": "call-to-action",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -119,6 +123,7 @@
                             "key": "field_63ebecd310b43",
                             "label": "Full-width Image",
                             "name": "full-image",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -150,6 +155,7 @@
                             "key": "field_65326eba3235f",
                             "label": "Accordion",
                             "name": "accordion",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -181,6 +187,7 @@
                             "key": "field_6535861c4715f",
                             "label": "Cards",
                             "name": "cards",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -212,6 +219,7 @@
                             "key": "field_6535923c36fea",
                             "label": "Video",
                             "name": "video",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -243,6 +251,7 @@
                             "key": "field_653cdc632eaa5",
                             "label": "Logo carousel",
                             "name": "logo-carousel",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -274,6 +283,7 @@
                             "key": "field_65ba2aff1c82a",
                             "label": "Icon cards",
                             "name": "icon-cards",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -325,5 +335,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1706699544
+    "show_in_rest": 0,
+    "modified": 1752157375
 }
