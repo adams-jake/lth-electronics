@@ -19,7 +19,7 @@
 // use the .heading-1, .heading-2, etc. classes to style headings visually.
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight:normal;
+		font-weight:300;
 		font-size:inherit;
 	}
 
@@ -31,7 +31,10 @@
 		
 		// use unitless line-height
 		line-height:1.4; 
-	}
+		-webkit-font-smoothing: antialiased;
+		font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;	
+}
 
 	// the main text-based block elements in
 	// use for any paragraph-style text
@@ -84,7 +87,7 @@
 			font-size: 2.3em;
 		}
 		@media(min-width:@medium) {
-			font-size: 3em;
+			font-size: 3.2em;
 		}
 	}
 
@@ -177,6 +180,12 @@
 
 
 // modifiers
+
+.label {
+	font-family: @secondary;
+	text-transform: uppercase;
+	color: @darkblue;
+}
 
 .text-white, .text-white a {
 	color:white;

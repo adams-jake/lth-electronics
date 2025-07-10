@@ -12,6 +12,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php css('/assets/dist/main.css') ?>
 		<?php wp_head_indented(2); ?>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">		
 	</head>
 	<body>
 		<header class="site-header">
