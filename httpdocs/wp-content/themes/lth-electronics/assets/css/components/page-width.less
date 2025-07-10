@@ -21,3 +21,13 @@
 	&:extend(.page-width);
 	@media(min-width:@medium) { max-width:60vw }
 }
+
+
+
+.page-width--large {
+	&:extend(.page-width);
+	@media(min-width: @large) { 
+		max-width: 1440px;
+		width: calc(100% - 5em)	
+	}
+}
