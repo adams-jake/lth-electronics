@@ -11,6 +11,7 @@ include 'functions/includes/pagination.php';
 include 'functions/includes/route.php';
 include 'functions/includes/seo.php';
 include 'functions/includes/classlists.php';
+include 'functions/includes/button.php';
 
 // helpers
 include 'functions/includes/Image.php';

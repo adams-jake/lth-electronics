@@ -8,9 +8,109 @@
 
 // basic button style
 
+:root {
+	--button-border: none;
+	--button-text-color: @lightblue;
+	--button-icon-size: 12px;
+	--button-icon-color-primary: @darkblue;
+	--button-icon-color-secondary: @lightblue;
+	--button-icon-color-svg: @darkblue;
+}
+
 .button {
 	text-decoration:none;
-	display:inline-block;
+	display:inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0.25em 0.25em 0.25em 1.25em;
+	border: var(--button-border);
+	border-radius: 5em;
+	background: var(--button-icon-color-primary);
+	color: var(--button-text-color);
+}
+
+.button__arrow {
+	position: relative;
+	margin-left: 1em;
+	background: var(--button-icon-color-secondary);
+	width: 2.5em; height: 2.5em;
+	border: var(--button-border);
+	border-radius: 5em;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: 0.7s all @ease;
+	overflow: hidden;
+}
+
+.button:hover .button__arrow {
+	transform: scale3d(0.9, 0.9, 1);
+	transform-origin: center center;
+	transform-style: preserve-3d;
+}
+
+.button__arrow__icon {
+	position: absolute;
+	width: var(--button-icon-size); height: var(--button-icon-size);
+	transition: 0.7s all @ease;
+	transform-style: preserve-3d;
+
+	& path {
+		fill: var(--button-icon-color-svg);
+	}
+}
+
+.button__arrow__second {
+	transform: translate3d(-190%, 190%, 0px);
+}
+
+.button:hover .button__arrow__second {
+	transform: translate3d(-0%, 0%, 0px);
+}
+
+.button:hover .button__arrow__first {
+	transform: translate3d(180%, -180%, 0px);
+	opacity: 0.5;
+}
+
+
+// button variations
+
+.button--small {
+	--button-icon-size: 10px;
+	font-size: 0.9em;
+}
+
+.button--large {
+	--button-icon-size: 14px;
+	font-size: 1.1em;
+}
+
+
+.bg--dark-blue {
+	--button-text-color: @darkblue;
+	--button-icon-color-primary: @lightblue;
+	--button-icon-color-secondary: @darkblue;
+	--button-icon-color-svg: @lightblue;
+}
+
+.button--ghost {
+	--button-text-color: @darkblue;
+	--button-icon-color-primary: transparent;
+	--button-icon-color-secondary: transparent;
+	--button-icon-color-svg: @darkblue;
+	--button-border: 1px solid @darkblue;
+}
+
+.bg--dark-blue .button--ghost {
+	--button-text-color: @white;
+	--button-icon-color-primary: transparent;
+	--button-icon-color-secondary: transparent;
+	--button-icon-color-svg: @white;
+	--button-border: 1px solid @white;
 }
 
 
