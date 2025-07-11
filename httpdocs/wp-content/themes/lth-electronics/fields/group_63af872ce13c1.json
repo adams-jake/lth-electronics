@@ -209,6 +209,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6870d2ad8896d": {
+                    "key": "layout_6870d2ad8896d",
+                    "name": "stacked-cards",
+                    "label": "Stacked cards",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6870d2ad8896f",
+                            "label": "Stacked cards",
+                            "name": "stacked-cards",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6870d28d9e16a"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6535923836fe9": {
                     "key": "layout_6535923836fe9",
                     "name": "video",
@@ -306,9 +338,9 @@
                     "max": ""
                 }
             },
-            "button_label": "Add module",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Add module"
         }
     ],
     "location": [
@@ -336,5 +368,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752157375
+    "modified": 1752224449
 }

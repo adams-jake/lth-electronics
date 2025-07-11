@@ -1,0 +1,27 @@
+.stacked-cards__item {
+    @media(max-width: @max-medium) {
+         gap: 2em;
+    }
+}
+
+.stacked-cards__item {
+    margin-bottom: 3.5em;
+    padding-bottom: 3.5em;
+    border-bottom: 1px solid @borderColor;
+    &:last-of-type {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+}
+
+.stacked-cards___item__image {
+    width: 60%;
+    min-height: 12em;
+    @media (min-width: @small) { width: 40%; }
+    @media (min-width: @medium) { width: 70%; }
+    @media (min-width: @large) {
+        width: 70%;
+        min-height: 16em;
+    }
+}
