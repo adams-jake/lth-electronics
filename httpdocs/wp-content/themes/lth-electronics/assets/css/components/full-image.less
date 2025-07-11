@@ -1,3 +1,69 @@
 .full-image {
-    min-height: 420px;
+   height: 150vh;
+}
+
+.full-image__inner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    min-height: 100vh;
+    width: 100%;
+    z-index: 15;
+
+    padding-bottom: 2.5em;
+
+    
+    @media (min-width: @medium) {
+        padding-bottom: 5em;
+    }
+}
+
+.full-image__image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+}
+.full-image__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.5em;
+
+    @media (min-width: @medium) {
+        flex-wrap: nowrap;   
+        gap: 2em;
+    }
+}
+
+.full-image__content .button {
+    flex-shrink: 0;
+}
+
+.full-image::after, .full-image::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0; left: 0;
+    z-index: 5;
+    
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.full-image__label {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.full-image::before {
+    height: 70%;
+    background: linear-gradient(360deg,rgba(0, 0, 0, 0.35) 1%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+.pin-spacer:has(> .full-image) + .marker + section,
+.pin-spacer:has(> .full-image) + section {
+    border-radius: 2.5em 2.5em 0 0;
 }

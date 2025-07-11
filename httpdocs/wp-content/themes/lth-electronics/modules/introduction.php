@@ -15,11 +15,11 @@
     $textColour = module_text_color($backgroundColour);
 ?>
 
-<section class="<?php echo classlist('intro', $backgroundColour, $spacing, $textColour); ?>">
+<section class="<?php echo classlist('introduction', $backgroundColour, $spacing, $textColour); ?>">
     <div class="page-width--large">
         <p class="label">About us</p>
         <div class="grid grid--gutter flex-space-between">
-            <div class="col-14@medium">
+            <div class="introduction__content col-17@medium col-14@large">
                 <div class="intro__inner first-last">
                     <h2 class="heading-2"><?php echo $title; ?></h2>
                     <div class="text-main first-last">
@@ -28,7 +28,7 @@
                     <?php echo renderButton($link); ?>
                 </div>
             </div>
-            <div class="col-7@medium">
+            <div class="introduction__image col-14 col-7@medium">
                 <?php if ($image->hasImage()) : ?>
                     <img 
                         class="object-fit border-radius" 

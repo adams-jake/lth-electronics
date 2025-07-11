@@ -3,9 +3,10 @@
     "title": "Module: Full-width image",
     "fields": [
         {
-            "key": "field_63ebec9061011",
-            "label": "Image",
+            "key": "field_686ffbadeeb3e",
+            "label": "Content",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -16,12 +17,53 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_686ffbb6eeb3f",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_63ebec9061011",
+            "label": "Image",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_63ebec9061017",
             "label": "Image",
             "name": "image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -43,9 +85,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_65321bc6c199b",
-            "label": "Options",
+            "key": "field_686ffbc7eeb41",
+            "label": "Link",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -56,13 +99,15 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
-            "key": "field_65321b87ce2f6",
-            "label": "Image height",
-            "name": "height",
-            "type": "range",
+            "key": "field_686ffbceeeb42",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -71,12 +116,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "min": 40,
-            "max": 80,
-            "step": "",
-            "prepend": "",
-            "append": "%"
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -96,5 +137,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1697782751
+    "show_in_rest": 0,
+    "modified": 1752169485
 }

@@ -20,7 +20,7 @@
     <div class="page-width">
         <div class="grid grid--gutter flex-align-center">
 
-            <div class="image-text__image col-6@medium">
+            <div class="image-text__image col-12@medium">
                 <?php if ($image->hasImage()) : ?>
                     <img 
                         class="object-fit" 
@@ -34,16 +34,12 @@
                 <?php endif ?>
             </div>
             
-            <div class="col-6@medium first-last">
+            <div class="col-12@medium first-last">
                 <h2 class="heading-2"><?php echo $title; ?></h2>
                 <div class="text-main">
                     <?php echo $content; ?>
                 </div>
-                <?php if ($link->hasLink()) : ?>
-                    <a class="button" <?php echo $link->attributes; ?>>
-                        <?php echo $link->text; ?>
-                    </a>
-                <?php endif; ?>
+                <?php echo renderButton($link); ?>
             </div>
         </div>
     </div>

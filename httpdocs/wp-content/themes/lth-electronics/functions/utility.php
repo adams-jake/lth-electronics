@@ -132,7 +132,8 @@ function module_text_color($backgroundColour) {
 }
 
 function module_row_spacing($backgroundColour) {
-	return ($backgroundColour === 'bg--white') ? 'margin-y' : 'padding-y';
+	// return ($backgroundColour === 'bg--white') ? 'margin-y' : 'padding-y';
+	return 'padding-y';
 }
 
 add_filter( 'upload_mimes', function($allowed) { // Allow SVG upload 
