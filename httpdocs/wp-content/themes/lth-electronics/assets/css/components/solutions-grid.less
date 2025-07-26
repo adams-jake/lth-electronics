@@ -1,0 +1,100 @@
+:root {
+    --solution-color: #ccc;
+    --solution-spacing: 1em;
+    --solution-bottom-height: 1.3em;
+}
+
+.solution {
+    width: 50%;
+    min-height: 9em;
+    text-decoration: none;
+    color: inherit;
+
+    --button-icon-color-primary: var(--solution-color);
+	--button-icon-color-secondary: var(--solution-color);
+	--button-icon-color-svg: #fff;
+
+    @media (min-width: @small) {
+        width: 33.333%; 
+        min-height: 12em; 
+    }
+    @media(min-width: @medium) { 
+        width: 25%; 
+        min-height: 16em;
+    }
+    @media(min-width: @large) { 
+        width: 20%; 
+        min-height: 18em;
+    }
+}
+
+.solution__inner {
+    padding: var(--solution-spacing) var(--solution-spacing) 5em;
+    @media (min-width: @medium) {
+        padding: var(--solution-spacing);
+    }
+    
+    height: 100%; width: 100%;
+    border: 1px solid #E3E3E3;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.solution__arrow {
+    position: absolute;
+    bottom: calc(var(--solution-spacing) + 2em); 
+    font-size: 0.7em;
+    @media(min-width: @medium) {
+        bottom: calc(var(--solution-spacing) + var(--solution-bottom-height)); 
+        right: var(--solution-spacing);
+        transition: 0.5s bottom @ease2;
+        margin: 0;
+        font-size: 1em;
+    }
+}
+
+.solution__bottom {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: var(--solution-bottom-height);
+    transition: 0.5s height @ease2;
+}
+
+.solution__bottom__colour, 
+.solution__bottom__overlay {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 100%; width: 100%;
+}
+
+.solution__bottom__colour {
+    background: var(--solution-color);
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+}
+
+.solution__bottom__overlay {
+    background-image: url('../img/gradient-background.webp');
+    background-size: 250%;
+    background-repeat: no-repeat;
+    background-position: var(--solution-bg-pos);
+}
+
+
+// Hover states
+
+
+@media (min-width: @medium) {
+    .solution:hover {
+        --solution-bottom-height: 2em;
+    }
+
+    .solution:hover .button__arrow__second {
+        transform: translate3d(-0%, 0%, 0px);
+    }
+
+    .solution:hover .button__arrow__first {
+        transform: translate3d(180%, -180%, 0px);
+        opacity: 0.5;
+    }
+}

@@ -336,6 +336,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6881513764d16": {
+                    "key": "layout_6881513764d16",
+                    "name": "solutions_grid",
+                    "label": "Solutions grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6881513e64d19",
+                            "label": "Solutions grid",
+                            "name": "solutions_grid",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_68815112d1d68"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -368,5 +400,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752224449
+    "modified": 1753305417
 }

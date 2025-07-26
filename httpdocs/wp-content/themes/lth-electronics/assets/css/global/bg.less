@@ -2,14 +2,20 @@
     background: @white;
 }
 
-.bg--soft-grey {
-    background: @softgrey;
+.bg--light-blue {
+    background: @lightbg;
 }
 
 .bg--black {
     background: @black;
 }
 
-.bg--dark-blue {
+.bg--blue {
     background: @darkblue;
+}
+
+
+
+.bg--white + .marker + .bg--light-blue {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(245, 248, 251, 1) 10%, rgba(245, 248, 251, 1) 100%);
 }

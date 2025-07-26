@@ -8,6 +8,7 @@ add_action('admin_menu', function() {
 	remove_menu_page('edit-comments.php');
 	remove_submenu_page('themes.php', 'theme-editor.php');
 	remove_submenu_page('plugins.php', 'plugin-editor.php');
+	remove_submenu_page('edit.php?post_type=products', 'post-new.php?post_type=products');
 }, PHP_INT_MAX);
 
 

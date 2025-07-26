@@ -32,3 +32,4 @@ include 'functions/setup/setup-visibility.php';
 
 // init
 include 'functions/app.php';
+include 'functions/products.php';

@@ -195,10 +195,14 @@
 	}
 }
 
-.text-white, .text-white a {
+.text-white, .text-white * {
 	color:white;
 }
 
 .text-blue, .text-blue a {
 	color:@darkblue;
+}
+
+.bg--blue .text-blue {
+	color: @white;
 }

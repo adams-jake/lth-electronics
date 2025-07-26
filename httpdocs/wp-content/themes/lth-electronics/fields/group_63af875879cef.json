@@ -6,6 +6,7 @@
             "key": "field_63af875eefb5e",
             "label": "Background Colour",
             "name": "background_colour",
+            "aria-label": "",
             "type": "button_group",
             "instructions": "",
             "required": 0,
@@ -17,13 +18,14 @@
             },
             "choices": {
                 "bg--white": "White",
-                "bg--soft-grey": "Grey",
-                "bg--black": "Black"
+                "bg--light-blue": "Light blue",
+                "bg--blue": "Blue"
             },
-            "allow_null": 0,
             "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value"
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "layout": "horizontal"
         }
     ],
     "location": [
@@ -43,5 +45,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1697779567
+    "show_in_rest": 0,
+    "modified": 1753365138
 }

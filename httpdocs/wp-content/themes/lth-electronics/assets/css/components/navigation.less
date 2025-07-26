@@ -1,98 +1,139 @@
-:root {
-    /* sets the height of the top level menu item */
-    --menu-item--height: 2em;
+.site-menu  {
+    display: none;
+    margin: 0 0 0 1.5em;
+    @media (min-width: 950px) { display: block; }
+    @media (min-width: 1050px) { margin: 0 0 0 3.5em; }
 }
 
+// Site menu items
+.site-menu__item {
+    position: relative;
+    margin-right: 2em;
+    z-index: 10;
+}
 
+.site-menu__item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 1px; left: 0;
+
+    width: 0%; height: 1px;
+    background: @darkblue;
+
+    transition: 0.5s width @ease2;
+}
+
+.site-menu__item:hover::after {
+    width: 100%;
+}
+
+.site-menu__link {
+    display: block;
+
+    font-size: 1.15em;
+    text-decoration: none;
+    color: @darkblue;
+
+    border-radius: 5px;
+}
+
+// Dropdown
 .site-menu__dropdown {
     display: none;
-    width: max-content;
+    position: absolute;
+    padding-top: 0.5em;
+    top: 100%; left: 0;
+    
+    transform: translateX(-25%);
+    animation: fadeSlideIn 0.6s @ease forwards;
 }
 
-@media (min-width: @medium) {
 
-    .site-menu__item {
-        display: inline-flex;
-        position: relative;
-        align-items: center;
+.site-menu__item:hover .site-menu__dropdown {
+    display: block;
+    padding-top: 1em;
+}
 
-        height: var(--menu-item--height);
-        margin-right: 2em;
+.site-menu__dropdown__inner {
+    background: @lightbg;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #eee;
 
-        &:last-of-type {
-            margin-right: 0;
-        }
-    }
+    width: 20em;
+    padding: 0.5em;
+}
 
-    .site-menu__link {
-        font-size: 1.2em;
-        text-decoration: none;
-        color: #000;
-        line-height: 1em;
-    }
+.site-menu__dropdown__twocol .site-menu__dropdown__inner {
+    width: 40em;
+}
 
-    // Drop down
+.site-menu__has-children .site-menu__link {
+    display: flex;
+    align-items: center;
+}
 
+.site-menu__has-children .site-menu__link::after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0.7em; height: 0.7em;
+    margin-left: 0.25em;
+    top: 1px;
 
-    .site-menu__item:hover .site-menu__dropdown {
-        display: block;
+    background-image: url('../img/dropdown-arrow.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 
-        position: absolute;
-        top: var(--menu-item--height);
-    }
-
-    .site-menu__dropdown__item {
-        padding: 0.5em 1em;
-        background: #f8f8f8;
-        border-bottom: 1px solid #ebebeb;
-        transition: 0.5s all @ease;
-
-        &:last-of-type {
-            border-bottom: 0;
-        }
-    }
-
-    .site-menu__dropdown__item:hover {
-        background: #ebebeb;
+.site-menu__dropdown__item {
+    border-bottom: 1px solid @lightbg;
+    min-width: 14em;
+    &:last-of-type {
+        border-bottom: 0;
     }
 }
 
-@media (max-width: @max-medium) {
+.site-menu__dropdown__link {
+    display: block;
+    padding: 0.75em;
+    color: @darkblue;
+    text-decoration: none;
+    transition: 1s background @ease2;
 
-    .site-menu {
-        display: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
-        position: absolute;
-        right: -100vw; top: 0;
-        z-index: 25;
+    border-radius: 2px;
+}
 
-        width: 70vw; height: 100vh;
-        transition: 0.75s @ease2;
+.site-menu__dropdown__link:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.site-menu__login {
+    text-decoration: none;
+}
+
+.site-menu__login__icon {
+    align-items: center;
+}
+
+.site-menu__login__icon svg {
+    width: 2.2em;
+}
+
+
+@keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) translateX(-25%);
     }
-
-    .site-menu.state {
-        display: block;
+    100% {
+      opacity: 1;
+      transform: translateY(0) translateX(-25%);
     }
-
-    .site-menu.open {
-        right: 0;
-    }
-
-    .site-menu__nav {
-        background: @softgrey;
-        position: relative;
-        padding: 3em;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100%;
-    }
-
-    .site-menu__link {
-        font-size: 1.6em;
-        text-decoration: none;
-    }
-
 }

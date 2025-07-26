@@ -128,7 +128,7 @@ function wp_head_indented($tabs = 2) {
 }
 
 function module_text_color($backgroundColour) {
-	return ($backgroundColour === 'bg--black') ? 'text-white' : '';
+	return ($backgroundColour === 'bg--blue') ? 'text-white' : '';
 }
 
 function module_row_spacing($backgroundColour) {
