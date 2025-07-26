@@ -86,7 +86,7 @@ function createLink(string $text, string $href, bool $isCurrent = false, bool $i
 
 function render() {
     ?>
-    <div class="breadcrumbs">
+    <div class="breadcrumbs grid">
         <a class="breadcrumbs__link breadcrumbs__link--is-home" href="<?php echo home_url() ?>">Home</a>
         <?php foreach(links() as $breadcrumb) : ?>
             <div class="breadcrumb__link">

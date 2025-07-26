@@ -57,21 +57,21 @@
 
 	.heading-1 {
 		font-size:2.1em;
+		font-weight: 300;
 		line-height:1.05;
-		font-weight: 900;
 		margin-top: 0.6em;
 		margin-bottom: 0.4em;
 		@media(min-width:@x-small) {
-			font-size: 2.1em;
+			font-size: 2.3em;
 		}
 		@media(min-width:@small) {
-			font-size: 2.6em;
+			font-size: 2.8em;
 		}
 		@media(min-width:@medium) {
-			font-size: 3em;
+			font-size: 3.75em;
 		}
 		@media(min-width:@large) {
-			font-size: 3.33em;
+			font-size: 4.2em;
 		}
 	}
 
@@ -183,6 +183,13 @@
 
 
 // modifiers
+
+.p--large {
+	font-size: 1.1em;
+	@media (min-width: @medium) {
+		font-size: 1.2em;
+	}
+}
 
 .label {
 	font-family: @secondary;

@@ -1,6 +1,6 @@
 {
     "key": "group_65ba53542531f",
-    "title": "Home: Hero",
+    "title": "Hero",
     "fields": [
         {
             "key": "field_65ba53541f18c",
@@ -17,12 +17,13 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_65ba53b709895",
             "label": "Title",
-            "name": "title",
+            "name": "hero_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -35,6 +36,7 @@
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -42,7 +44,7 @@
         {
             "key": "field_65ba53be09896",
             "label": "Content",
-            "name": "content",
+            "name": "hero_content",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -55,6 +57,7 @@
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "rows": "",
             "placeholder": "",
             "new_lines": ""
@@ -74,12 +77,13 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_65ba53e209899",
             "label": "Image",
-            "name": "image",
+            "name": "hero_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -99,6 +103,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
+            "allow_in_bindings": 1,
             "preview_size": "medium"
         },
         {
@@ -116,12 +121,13 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_65ba53ed0989a",
             "label": "Link",
-            "name": "link",
+            "name": "hero_link",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -132,7 +138,8 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "return_format": "array",
+            "allow_in_bindings": 1
         }
     ],
     "location": [
@@ -141,6 +148,13 @@
                 "param": "post_template",
                 "operator": "==",
                 "value": "page-templates\/home.php"
+            }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "default"
             }
         ]
     ],
@@ -153,5 +167,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706710022
+    "modified": 1753541977
 }
