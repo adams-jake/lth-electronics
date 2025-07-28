@@ -9,6 +9,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title><?php wp_title('·', true, 'right'); ?></title>
 		<?php seo\render() ?>
+		<link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php css('/assets/dist/main.css') ?>
 		<?php wp_head_indented(2); ?>
