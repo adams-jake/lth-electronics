@@ -25,3 +25,38 @@
         min-height: 16em;
     }
 }
+
+.stacked-cards {
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+.stacked-cards::after,
+.stacked-cards::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+
+    background: radial-gradient(40.4% 41.72% at 50% 50%, #001F5A 0%, rgba(245, 248, 251, 0) 90%);
+    opacity: 0.25;
+}
+
+
+.stacked-cards::after {
+    top: 5%; right: 0;
+    width: 30em; height: 40em;
+    @media (min-width: @medium) {
+        width: 50em; height: 60em;
+    }
+}
+
+
+.stacked-cards::before {
+    bottom: 5%; left: 0;
+    width: 40em; height: 30em;
+    @media (min-width: @medium) {
+        width: 40em; height: 30em;
+    }
+}
