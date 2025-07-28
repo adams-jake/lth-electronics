@@ -1,6 +1,5 @@
 
 // sets horizontal page spacing across all breakpoints
-
 .page-width {	
 
 	// center by default
@@ -16,18 +15,16 @@
 	@media(min-width:@large) { max-width: 1240px; }	
 }
 
-
 .page-width--narrow {
 	&:extend(.page-width);
 	@media(min-width:@medium) { max-width:60vw }
 }
 
-
-
 .page-width--large {
 	&:extend(.page-width);
 	@media(min-width: @large) {
-		width: calc(100% - 5em);
+		width: calc(100% - 2.5em);
+		max-width: 1440px;
 	}
 	@media(min-width: @x-large) { 
 		max-width: 1640px;
