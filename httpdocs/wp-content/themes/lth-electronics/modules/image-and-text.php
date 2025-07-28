@@ -18,20 +18,21 @@
 
 <section class="<?php echo classlist('image-text', $backgroundColour, $textColour, $spacing, $imagePosition); ?>">
     <div class="page-width">
-        <div class="grid grid--gutter flex-align-center">
-
-            <div class="image-text__image col-12@medium">
-                <?php if ($image->hasImage()) : ?>
-                    <img 
-                        class="object-fit" 
-                        src="<?php echo $image->src ?>"
-                        srcset="<?php echo $image->srcset ?>"
-                        sizes="(min-width: 62em) 50vw, 100vw"
-                        role="presentation" 
-                        alt="<?php echo $image->alt ?>"
-                        style="<?php echo $image->style ?>"
-                    >
-                <?php endif ?>
+        <div class="grid grid--gutter flex-end">
+            <div class="image-text__image__cont col-12@medium">
+                <div class="image-text__image border-radius relative">
+                    <?php if ($image->hasImage()) : ?>
+                        <img 
+                            class="object-fit--absolute" 
+                            src="<?php echo $image->src ?>"
+                            srcset="<?php echo $image->srcset ?>"
+                            sizes="(min-width: 62em) 50vw, 100vw"
+                            role="presentation" 
+                            alt="<?php echo $image->alt ?>"
+                            style="<?php echo $image->style ?>"
+                        >
+                    <?php endif ?>
+                </div>
             </div>
             
             <div class="col-12@medium first-last">

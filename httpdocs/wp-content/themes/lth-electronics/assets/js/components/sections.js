@@ -38,8 +38,10 @@ function animateFullImageSections(sections) {
 }
 
 window.onload = () => {
-    const sections = gsap.utils.toArray(".heading-2");
-    animateHeadings(sections)
+    const headingOne = gsap.utils.toArray(".heading-1");
+    const headingTwo = gsap.utils.toArray(".heading-2");
+    animateHeadings(headingOne)
+    animateHeadings(headingTwo)
 
     const fullImageSections = gsap.utils.toArray(".full-image");
     animateFullImageSections(fullImageSections)

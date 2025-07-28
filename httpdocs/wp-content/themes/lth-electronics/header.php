@@ -37,7 +37,7 @@
 								Login
 							</a>
 						</div>
-						<a class="button" href="http://lth.localhost/">
+						<a class="button hide flex@nav-break" href="http://lth.localhost/">
 							Contact us
 							<div class="button__arrow">
 								<svg class="button__arrow__icon button__arrow__first" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">

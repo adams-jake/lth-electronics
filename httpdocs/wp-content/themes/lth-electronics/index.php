@@ -13,6 +13,8 @@ modules\render('banner');
 	<?php endwhile ?>
 <?php endif ?>
 
-<?php modules\renderAll('modules') ?>
+<div id="content">
+	<?php modules\renderAll('modules') ?>
+</div>
 
 <?php get_footer() ?>

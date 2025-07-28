@@ -94,7 +94,7 @@
 }
 
 
-.bg--dark-blue {
+.bg--blue {
 	--button-text-color: @darkblue;
 	--button-icon-color-primary: @lightblue;
 	--button-icon-color-secondary: @darkblue;
@@ -117,6 +117,46 @@
 	--button-border: 1px solid @white;
 }
 
+.button--simple {
+	border: 0;
+	padding: 0;
+}
+
+.button--simple span {
+	position: relative;
+}
+
+.button--simple span::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0; left: 0;
+
+	width: 0; height: 1px;
+	background: @darkblue;
+	transition: width 0.5s @ease2;
+}
+
+.button--simple:hover span::after {
+	width: 100%;
+}
+
+.arrow--down {
+	transform: rotate(135deg) !important;
+}
+
+.arrow--down .button__arrow__second {
+transform: translate3d(-180%, 180%, 0px);
+}
+
+.button:hover .arrow--down .button__arrow__second {
+	transform: translate3d(-0%, 0%, 0px);
+}
+
+.button:hover .arrow--down .button__arrow__first {
+	transform: translate3d(180%, -180%, 0px);
+	opacity: 0.5;
+}
 
 // button types
 

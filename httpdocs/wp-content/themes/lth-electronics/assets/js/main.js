@@ -75,3 +75,19 @@ document.documentElement.classList.add('js')
 // 		anticipatePin:
 // 	});
 // })
+
+
+
+
+document.querySelectorAll('a.scroll-to-content').forEach(link => {
+link.addEventListener('click', function(e) {
+	e.preventDefault(); // Stop URL fragment from appearing
+
+	const targetId = this.getAttribute('href').substring(1); // Remove '#'
+	const target = document.getElementById(targetId);
+
+	if (target) {
+		target.scrollIntoView({ behavior: 'smooth' }); // Optional: smooth scroll
+	}
+});
+});

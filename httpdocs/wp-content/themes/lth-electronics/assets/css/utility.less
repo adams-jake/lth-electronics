@@ -109,3 +109,12 @@ section {
 section.full-image {
 	z-index: 1;
 }
+
+// .bg--white:has(.marker .bg--white) {
+// 	padding-bottom: 0;
+// }
+
+
+.bg--white:has(+ .marker + .bg--white) {
+	padding-bottom: 0;
+}
