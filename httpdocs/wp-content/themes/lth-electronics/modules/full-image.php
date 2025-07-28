@@ -5,7 +5,7 @@
 ?>
 
 <section class="full-image relative bg--dark-blue">
-    <div class="page-width">
+    <div class="page-width--large">
         <div class="full-image__inner grid flex-end"> 
             <div>
                 <p class="full-image__label label text-white">About us</p>

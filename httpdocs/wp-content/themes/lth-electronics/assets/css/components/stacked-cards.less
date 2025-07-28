@@ -26,11 +26,15 @@
     }
 }
 
+.stacked-cards__icon {
+    width: 3em;
+    height: auto;
+}
+
 .stacked-cards {
     position: relative;
     overflow-x: hidden;
 }
-
 
 .stacked-cards::after,
 .stacked-cards::before {
@@ -43,7 +47,6 @@
     opacity: 0.25;
 }
 
-
 .stacked-cards::after {
     top: 5%; right: 0;
     width: 30em; height: 40em;
@@ -51,7 +54,6 @@
         width: 50em; height: 60em;
     }
 }
-
 
 .stacked-cards::before {
     bottom: 5%; left: 0;

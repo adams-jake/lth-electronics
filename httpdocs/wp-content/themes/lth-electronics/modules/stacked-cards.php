@@ -16,7 +16,7 @@
 ?>
 
 <section class="<?php echo classlist('stacked-cards', $backgroundColour, $textColour, $spacing); ?>">
-    <div class="page-width--large">
+    <div class="page-width">
         <div class="section-head margin-bottom-5">
             <div class="grid">
                 <div class="col-7@medium first-last">
@@ -63,7 +63,17 @@
                                 </div>
                                 <?php echo renderButton($cardLink, 'small', true); ?>
                             </div>
-                            <div class="col-1@medium hide show@medium">][</div>
+                            <div class="col-1@medium hide show@medium">
+                                <svg class="stacked-cards__icon" width="208" height="208" viewBox="0 0 208 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="103.744" cy="103.741" r="45.5227" stroke="#001F5A" stroke-width="3.5"/>
+                                    <circle cx="104" cy="104" r="102.25" stroke="#001F5A" stroke-width="3.5"/>
+                                    <circle cx="103.955" cy="103.958" r="92.7955" stroke="#001F5A" stroke-width="3.5"/>
+                                    <circle cx="103.916" cy="103.913" r="83.3409" stroke="#001F5A" stroke-width="3.5"/>
+                                    <circle cx="103.873" cy="103.871" r="73.8864" stroke="#001F5A" stroke-width="3.5"/>
+                                    <circle cx="103.829" cy="103.829" r="64.4318" stroke="#001F5A" stroke-width="3.5"/>
+                                    <circle cx="103.786" cy="103.784" r="54.9773" stroke="#001F5A" stroke-width="3.5"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>

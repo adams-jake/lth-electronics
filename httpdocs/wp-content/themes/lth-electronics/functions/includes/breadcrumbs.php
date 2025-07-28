@@ -89,8 +89,8 @@ function render() {
     <div class="breadcrumbs grid">
         <a class="breadcrumbs__link breadcrumbs__link--is-home" href="<?php echo home_url() ?>">Home</a>
         <?php foreach(links() as $breadcrumb) : ?>
-            <div class="breadcrumb__link">
-                <span class="breadcrumbs__separator">/</span>
+            <div class="breadcrumb__link grid flex-align-center">
+                <span class="breadcrumbs__separator"></span>
                 <?php if ($breadcrumb->href && $breadcrumb->text) : ?>
                     <a href="<?php echo $breadcrumb->href ?>"><?php echo $breadcrumb->text ?></a>
                 <?php elseif ($breadcrumb->text) : ?>

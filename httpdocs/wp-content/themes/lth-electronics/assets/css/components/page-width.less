@@ -13,7 +13,7 @@
 	max-width:90vw;
 	@media(min-width:@small) { max-width:90vw }
 	@media(min-width:@medium) {}
-	@media(min-width:@large) { max-width: 1440px; }	
+	@media(min-width:@large) { max-width: 1240px; }	
 }
 
 
@@ -26,8 +26,10 @@
 
 .page-width--large {
 	&:extend(.page-width);
-	@media(min-width: @large) { 
-		max-width: 1440px;
-		width: calc(100% - 5em)	
+	@media(min-width: @large) {
+		width: calc(100% - 5em);
+	}
+	@media(min-width: @x-large) { 
+		max-width: 1640px;
 	}
 }

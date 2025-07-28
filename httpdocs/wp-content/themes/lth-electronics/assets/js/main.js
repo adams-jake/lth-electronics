@@ -6,9 +6,14 @@ import expand from './components/expand'
 import asyncLoadOnScroll from './utility/asyncLoadOnScroll'
 import videoLightbox from './components/video'
 import logoCarousel from './components/logoCarousel'
+
 import './components/navigation'
 import './components/load-row'
-import './components/sections'
+
+// Animations
+import './animations/gsapSetup'
+import './animations/headings'
+import './animations/fullImagePin'
 
 // videoLightbox()
 logoCarousel()
