@@ -1,0 +1,41 @@
+:root {
+    --cta-border-width: 2px;
+}
+
+.call-to-action__inner {
+    position: relative;
+    overflow: hidden;
+}
+
+.call-to-action__content {
+    position: relative;
+    z-index: 5;
+}
+
+.call-to-action__circle {
+  position: absolute;
+  width: 30em;
+  height: 30em;
+  border-top-left-radius: 100%;
+  overflow: hidden;
+
+  bottom: 0; right: 0;
+}
+
+.call-to-action__line {
+    position: absolute;
+    bottom: calc(var(--cta-border-width) * -1); right: calc(var(--cta-border-width) * -1);
+    border-top-left-radius: 100%;
+    border:var(--cta-border-width) solid @lightblue;
+
+    width: 0; height: 0;
+    opacity: 0;
+
+    transition: 1.6s all @ease;
+    transition-delay: calc(0.05s * var(--cta-line-number));
+}
+
+.js .loaded .call-to-action__line {
+    width: calc(100% * (var(--cta-line-number) / 10)); height: calc(100% * (var(--cta-line-number) / 10));
+    opacity: calc(1 - ((var(--cta-line-number) - 1) * 0.9 / 6));
+}
