@@ -22,5 +22,5 @@ jobs:
         if: github.ref == 'refs/heads/live'
         run: |
           rsync -mrchivz --times --omit-dir-times --delete-after \
-          ./httpdocs/wp-content/themes/clearing \
+          ./httpdocs/wp-content/themes/lth-electronics \
           lthelectronics@lthelectronics.ssh.wpengine.net:sites/lth-electronics/wp-content/themes
