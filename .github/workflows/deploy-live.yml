@@ -23,4 +23,4 @@ jobs:
         run: |
           rsync -mrchivz --times --omit-dir-times --delete-after \
           ./httpdocs/wp-content/themes/clearing \
-          lthelectronics@lthelectronics.ssh.wpengine.net:sites/lthelectronics/wp-content/themes
+          lthelectronics@lthelectronics.ssh.wpengine.net:sites/lth-electronics/wp-content/themes
