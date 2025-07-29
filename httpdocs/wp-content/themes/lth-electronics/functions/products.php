@@ -31,6 +31,7 @@ function registerProducts() {
     ]);
 }
 
+
 function registerProductCategories() {
     $labels = [
         "name" => __( "Solutions", "custom-post-type" ),
@@ -46,7 +47,7 @@ function registerProductCategories() {
         "show_in_menu" => true,
         "show_in_nav_menus" => true,
         "query_var" => true,
-        "rewrite" => [ 'slug' => '/solution', 'with_front' => true, ],
+        'rewrite' => ['slug' => 'solution', 'with_front' => true],
         "show_admin_column" => true,
         "show_in_rest" => false,
         "rest_base" => "solution",
@@ -55,14 +56,15 @@ function registerProductCategories() {
         "show_in_graphql" => false,
     ];
     register_taxonomy( "solutions", [ "products" ], $args );
-}  
+}
 
 
-add_rewrite_rule(
-    '^products/page/(\d+)/?$',
-    'index.php?pagename=products/&paged=$matches[1]',
-    'top'
-);
+
+// add_rewrite_rule(
+//     '^products/page/(\d+)/?$',
+//     'index.php?pagename=products/&paged=$matches[1]',
+//     'top'
+// );
 
 function getProducts(array $args = [], int $count = -1) : array {
 	return get_posts(array_merge([
@@ -97,3 +99,4 @@ function getSolutions(array $args = [], int $count = -1): array {
 
     return is_array($terms) ? $terms : [];
 }
+
