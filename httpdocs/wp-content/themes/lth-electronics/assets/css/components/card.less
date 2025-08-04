@@ -1,0 +1,51 @@
+:root {
+    --card-image--height: 16em;
+    --card-content--padding: 1.5em;
+}
+
+.card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: @borderRadius;
+    overflow: hidden;
+    
+    transition: 0.5s box-shadow @ease2;
+}
+
+.card__image {
+    height: var(--card-image--height);
+    background: @white;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.card__labels {
+    font-size: 0.85em;
+}
+
+.card__content {
+    height: 100%;
+    padding: var( --card-content--padding);
+    transition: 1s all @ease2;
+}
+
+// Hover states
+.card:hover {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .card__content {
+    background: @lightbg;
+}
+
+// Variations
+.card--medium {
+    --card-image--height: 18em;
+}
+
+.card--large {
+    --card-image--height: 20em;
+}
