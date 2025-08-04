@@ -14,6 +14,7 @@ import './components/load-row'
 import './animations/gsapSetup'
 import './animations/headings'
 import './animations/fullImagePin'
+import './animations/footerWaves'
 
 // videoLightbox()
 logoCarousel()
@@ -96,3 +97,4 @@ link.addEventListener('click', function(e) {
 	}
 });
 });
+
