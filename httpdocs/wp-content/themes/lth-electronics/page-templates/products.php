@@ -1,36 +1,16 @@
 <?php 
+    /* Template Name: Archive: Products */
     get_header();
-
-    $currentTerm = get_queried_object();
-    $termID = $currentTerm->term_id ?? '';
     
-    $title = $currentTerm->name ?? '';
-    $content = '';
-
-    $args = [ 'tax_query' => [
-            [
-                'taxonomy' => 'solutions',
-                'field'    => 'term_id', // Important! We're querying by Term ID
-                'terms'    => $termID,
-            ],
-        ],
-    ];
-    
-    $query = getProductsQuery($args, 12);
+    $query = getProductsQuery([], 12);
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+    
+
+    // var_dump($loop);
 ?>
 
-<section class="banner">
-    <div class="banner__inner">
-        <div class="page-width--large">
-            <?php breadcrumbs\render(); ?>
-            <h1 class="heading-1 margin-bottom-3 col-15@medium col-13@large"><?php echo $title; ?></h1>
-        </div>
-    </div>
-</section>
-
 <?php if ($query->have_posts()) : ?>
-    <section class="margin-bottom">
+    <section>
         <div class="page-width--large">
             <div class="grid grid--gutter grid--small">
                 <?php while ( $query->have_posts() ) : $query->the_post();
@@ -40,8 +20,6 @@
                     $postTitle = get_the_title($ID) ?? '';
 
                     $postLink = get_the_permalink($ID) ?? '';
-                    $label = $data['label'] ?? '';
-
                     if (!$postLink) return;
                 ?>
                     <div class="col-6@medium">
@@ -60,11 +38,11 @@
                                 </div>
                             <?php endif; ?>
                             <div class="card__content first-last">
-                                <div class="card__labels grid label text-pink margin-bottom-2">
-                                    <span><?php echo $title; ?></span>
+                                <div class="card__labels grid label text-pink margin-bottom-1">
+                                    <span>Test, Test two, Test three</span>
                                 </div>
                                 <h3 class="heading-4 margin-0"><?php echo $postTitle; ?></h3>
-                                <span><?php echo $label; ?></span>
+                                <p>Lorem ipsum dolor sit amet consectetur</p>
                             </div>
                         </a>        
                     </div>            
@@ -72,9 +50,15 @@
             </div>
             
         </div>
-        <?php modules\render('pagination') ?>
     </section>
 
+    <section class="margin-y-5">
+        <div class="page-width">
+
+        <?php modules\render('pagination') ?>
+        </div>
+
+    </section>
 
 <?php endif; ?>
 

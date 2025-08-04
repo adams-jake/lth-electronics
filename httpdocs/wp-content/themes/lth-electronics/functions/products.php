@@ -58,13 +58,11 @@ function registerProductCategories() {
     register_taxonomy( "solutions", [ "products" ], $args );
 }
 
-
-
-// add_rewrite_rule(
-//     '^products/page/(\d+)/?$',
-//     'index.php?pagename=products/&paged=$matches[1]',
-//     'top'
-// );
+add_rewrite_rule(
+    '^products/page/(\d+)/?$',
+    'index.php?pagename=products/&paged=$matches[1]',
+    'top'
+);
 
 function getProducts(array $args = [], int $count = -1) : array {
 	return get_posts(array_merge([
@@ -75,19 +73,18 @@ function getProducts(array $args = [], int $count = -1) : array {
 	], $args)) ?: [];
 }
 
-function getProductsQuery(array $args = []) : \WP_Query {
+function getProductsQuery(array $args = [], int $count = 9) : \WP_Query {
 	$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 	return new \WP_Query(array_merge([
 		'orderby' => 'post_date',
 		'order' => 'DESC',
 		'post_type' => 'products',
-		'posts_per_page' => get_option('posts_per_page'),
+		'posts_per_page' => $count,
 		'post_status' => 'publish',
 		'has_password' => false,
 		'paged' => $paged
 	], $args));
 }
-
 
 function getSolutions(array $args = [], int $count = -1): array {
     $defaults = [
