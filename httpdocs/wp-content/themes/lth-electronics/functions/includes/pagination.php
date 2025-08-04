@@ -73,10 +73,10 @@ function items(int $current, int $last, callable $filter = null) {
 }
 
 
-function fromQuery(WP_Query $query = null) {
+function fromQuery(\WP_Query $query = null) {
 	global $paged, $wp_query;
 	$query = $query ?? $wp_query;
 	$current =  get_query_var('paged') ?: 1;
 	$last = $query->max_num_pages ?: $current;
-	return pagination($current, $last, 'get_pagenum_link');
+	return items($current, $last, 'get_pagenum_link');
 }
