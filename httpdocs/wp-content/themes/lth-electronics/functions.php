@@ -33,3 +33,33 @@ include 'functions/setup/setup-visibility.php';
 // init
 include 'functions/app.php';
 include 'functions/products.php';
+
+add_filter('sf_input_object_pre', 'preselect_solutions_taxonomy_filter', 10, 3);
+
+function preselect_solutions_taxonomy_filter($input, $sf_name, $sfid) {
+    // Check if we are on a Solutions taxonomy archive page
+    if (is_tax('solutions') && $sf_name === 'solutions') {
+        $current_term = get_queried_object();
+        if ($current_term && isset($current_term->term_id)) {
+            // Set the current term as checked
+            $input['attributes']['checked'] = 'checked';
+            $input['attributes']['value'] = $current_term->term_id;
+        }
+    }
+    return $input;
+}
+
+/**
+ * Ensure the Search & Filter form respects the current taxonomy archive
+ */
+add_filter('sf_archive_results_url', 'set_solutions_archive_url', 10, 3);
+
+function set_solutions_archive_url($url, $query_args, $args) {
+    if (is_tax('solutions')) {
+        $term = get_queried_object();
+        if ($term && isset($term->taxonomy) && $term->taxonomy === 'solutions') {
+            $url = get_term_link($term);
+        }
+    }
+    return $url;
+}

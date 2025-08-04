@@ -1,0 +1,17 @@
+.product__labels span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    line-height: 1em;
+    margin-right: 0.75em;
+}
+
+.product__labels span:not(:last-of-type)::after {
+    content: '';
+    display: block;
+    width: 0.25em; height: 0.25em;
+    background: @pink;
+    margin-left: 0.75em;
+    border-radius: 100%;
+}

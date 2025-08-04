@@ -1,7 +1,29 @@
 {
     "key": "group_5d39b832e7a7e",
     "title": "Hide content editor",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_68891628325f3",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
     "location": [
         [
             {
@@ -16,6 +38,13 @@
                 "operator": "==",
                 "value": "page-templates\/home.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "products"
+            }
         ]
     ],
     "menu_order": -1,
@@ -28,5 +57,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1697803912
+    "show_in_rest": 0,
+    "modified": 1753814581
 }

@@ -34,8 +34,14 @@ function links(bool $includeRoot = false): array {
     // ancestors
     
     $parent = (int) apply_filters("breadcrumbs/post_parent", $post->post_parent);
-    if ($parent !== 0) {
-        $ancestors = ancestors($post->post_parent);
+        $category = get_queried_object($post);
+
+
+    if (is_tax('solutions')) {
+        $category = categoryAncestors($category->term_id, 'solutions');
+        $crumbs = array_merge($category, $crumbs);
+    } elseif ($parent !== 0) {
+        $ancestors = ancestors($parent);
         $crumbs = array_merge($crumbs, $ancestors);
     }
 
@@ -71,6 +77,26 @@ function ancestors(int $id, array $links = []): array {
         );
         $id = $post->post_parent;
     }
+    return $links;
+}
+
+function categoryAncestors(int $id, string $term = '', array $links = []): array {
+    $active = $id;
+
+    while ($id) {
+        $currentTerm = get_term($id, $term);
+        
+        if (!$currentTerm || $id === 0) return $links;
+        if ((int) get_option('page_on_front') === (int) $currentTerm->ID) return $links;
+
+        $links[] = createLink(
+            $currentTerm->name, 
+            get_term_link($id, $term),
+            ($active === $id && is_tax($term))
+        );
+        $id = $currentTerm->parent;
+    }
+
     return $links;
 }
 
