@@ -34,12 +34,22 @@ function links(bool $includeRoot = false): array {
     // ancestors
     
     $parent = (int) apply_filters("breadcrumbs/post_parent", $post->post_parent);
-        $category = get_queried_object($post);
+    $category = get_queried_object($post);
 
+    $productPage = templatePage('page-templates/products.php') ?? null;
+    $productPage_id = (int) ($productPage->ID ?? 0);
 
     if (is_tax('solutions')) {
-        $category = categoryAncestors($category->term_id, 'solutions');
-        $crumbs = array_merge($category, $crumbs);
+        // $ancestors = ancestors($productPage_id);
+        // // $crumbs = array_merge($crumbs, $ancestors);
+        // $category = categoryAncestors($category->term_id, 'solutions');
+        // $crumbs = array_merge($category, $crumbs);
+        //         var_dump($ancestors);
+
+        $ancestors = ancestors($productPage_id) ?? null;
+        $primaryCat = categoryAncestors($category->term_id, 'solutions');
+        $crumbs = array_merge($primaryCat, $ancestors);
+
     } elseif ($parent !== 0) {
         $ancestors = ancestors($parent);
         $crumbs = array_merge($crumbs, $ancestors);
@@ -47,7 +57,7 @@ function links(bool $includeRoot = false): array {
 
     // custom post type archive (customize with 'breadcrumbs/post_type/{post_type}' hook)
 
-    if ($post->post_type && !in_array($post->post_type, ['post', 'page', 'attachment'])) {
+    if (!$ancestors && $post->post_type && !in_array($post->post_type, ['post', 'page', 'attachment'])) {
         $name = get_post_type_object($post->post_type)->label ?? "";
         $link = get_post_type_archive_link($post->post_type) ?? "";
         $crumb = createLink($name, $link);
