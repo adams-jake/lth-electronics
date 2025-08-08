@@ -3,12 +3,12 @@ import { gsap, ScrollTrigger, SplitText } from './gsapSetup';
 function waveFooters(el) {
 
     const waveOne =  gsap.to([`.footer-wave__one`], {
-        x: "-80vw",
+        x: "-30%",
         ease: "none",
         scrollTrigger: {
             trigger: el,
             start: "top bottom",
-            end: "top top",
+            end: "bottom bottom",
             scrub: 1.5,
             // markers: true
         }
@@ -16,12 +16,12 @@ function waveFooters(el) {
 
 
     const waveTwo =  gsap.to([`.footer-wave__two`], {
-       x: "-110vw",
+       x: "-20%",
         ease: "none",
         scrollTrigger: {
             trigger: el,
             start: "top bottom",
-            end: "top top",
+            end: "bottom bottom",
             scrub: 1.5,
             // markers: true
         }
@@ -31,7 +31,7 @@ function waveFooters(el) {
 
 
 
-[...document.querySelectorAll('.footer-wave')].map(waveFooters)
+[...document.querySelectorAll('.footer')].map(waveFooters)
 
 
 

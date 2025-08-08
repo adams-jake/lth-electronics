@@ -4,12 +4,17 @@
 }
 
 .footer-wave__cont {
-    height: 10em;
+    height: 121px;
 }
 
 .footer-wave {
     position: absolute;
     bottom: -2px; left: 0;
+
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+
 }
 
 .footer-wave__one {

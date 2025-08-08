@@ -53,3 +53,8 @@
 		.padding-x-@{i} { padding-left:(@i * @multiplier) !important; padding-right:(@i * @multiplier) !important }
 		.padding-y-@{i} { padding-top:(@i * @multiplier) !important; padding-bottom:(@i * @multiplier) !important }
 	});
+
+	.for(5, {
+		@multiplier: 0.5em;
+		.gap-@{i} { gap: (@i * @multiplier) !important }
+	});

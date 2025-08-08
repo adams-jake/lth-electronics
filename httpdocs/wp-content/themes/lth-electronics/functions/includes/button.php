@@ -4,7 +4,7 @@ function renderButton($props, string $size = '', bool $ghost = false) {
     if (!$props->hasLink()) return;
 
     $classes = classlist(
-        'button margin-top-2',
+        'button',
         ($size) ? 'button--' . $size . '' : '',
         ($ghost) ? 'button--ghost' : ''
     );

@@ -32,12 +32,14 @@ function links(bool $includeRoot = false): array {
     }
 
     // ancestors
-    
+    // $ancestors = [];
     $parent = (int) apply_filters("breadcrumbs/post_parent", $post->post_parent);
     $category = get_queried_object($post);
 
     $productPage = templatePage('page-templates/products.php') ?? null;
     $productPage_id = (int) ($productPage->ID ?? 0);
+
+    
 
     if (is_tax('solutions')) {
         // $ancestors = ancestors($productPage_id);
@@ -49,21 +51,23 @@ function links(bool $includeRoot = false): array {
         $ancestors = ancestors($productPage_id) ?? null;
         $primaryCat = categoryAncestors($category->term_id, 'solutions');
         $crumbs = array_merge($primaryCat, $ancestors);
-
+    } elseif(is_singular('products')) {
+        $ancestors = ancestors($productPage_id) ?? null;
+        $crumbs = array_merge($crumbs, $ancestors);
     } elseif ($parent !== 0) {
-        $ancestors = ancestors($parent);
+        $ancestors = ancestors($parent) ?? [];
         $crumbs = array_merge($crumbs, $ancestors);
     }
 
     // custom post type archive (customize with 'breadcrumbs/post_type/{post_type}' hook)
 
-    if (!$ancestors && $post->post_type && !in_array($post->post_type, ['post', 'page', 'attachment'])) {
-        $name = get_post_type_object($post->post_type)->label ?? "";
-        $link = get_post_type_archive_link($post->post_type) ?? "";
-        $crumb = createLink($name, $link);
-        $crumb = apply_filters("breadcrumbs/post_type/" . $post->post_type, $crumb);
-        if ($crumb) $crumbs[] = $crumb;
-    }
+    // if (!$ancestors && $post->post_type && !in_array($post->post_type, ['post', 'page', 'attachment'])) {
+    //     $name = get_post_type_object($post->post_type)->label ?? "";
+    //     $link = get_post_type_archive_link($post->post_type) ?? "";
+    //     $crumb = createLink($name, $link);
+    //     $crumb = apply_filters("breadcrumbs/post_type/" . $post->post_type, $crumb);
+    //     if ($crumb) $crumbs[] = $crumb;
+    // }
 
     // filter and include root
 
