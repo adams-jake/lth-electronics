@@ -22,6 +22,12 @@
                     $postLink = get_the_permalink($ID) ?? '';
                     $label = $data['label'] ?? '';
 
+                    $term_links = [];
+                    $terms = get_the_terms($ID, 'solutions');
+                    foreach ( $terms as $term ) {
+                        $term_links[] = esc_html($term->name);
+                    }
+
                     if (!$postLink) return;
                 ?>
                     <div class="col-6@medium">
@@ -41,10 +47,10 @@
                             <?php endif; ?>
                             <div class="card__content first-last">
                                 <div class="card__labels grid label text-pink margin-bottom-1">
-                                    <span><?php echo $label; ?></span>
+                                    <span><?php  echo implode( ', ', $term_links ); ?></span>
                                 </div>
                                 <h3 class="heading-4 margin-0"><?php echo $postTitle; ?></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur</p>
+                                <p><?php echo $label; ?></p>
                             </div>
                         </a>        
                     </div>            
