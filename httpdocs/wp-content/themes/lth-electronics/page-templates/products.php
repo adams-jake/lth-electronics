@@ -20,6 +20,8 @@
                     $postTitle = get_the_title($ID) ?? '';
 
                     $postLink = get_the_permalink($ID) ?? '';
+                    $label = $data['label'] ?? '';
+
                     if (!$postLink) return;
                 ?>
                     <div class="col-6@medium">
@@ -39,7 +41,7 @@
                             <?php endif; ?>
                             <div class="card__content first-last">
                                 <div class="card__labels grid label text-pink margin-bottom-1">
-                                    <span>Test, Test two, Test three</span>
+                                    <span><?php echo $label; ?></span>
                                 </div>
                                 <h3 class="heading-4 margin-0"><?php echo $postTitle; ?></h3>
                                 <p>Lorem ipsum dolor sit amet consectetur</p>
