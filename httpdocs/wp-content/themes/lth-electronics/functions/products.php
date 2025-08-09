@@ -76,8 +76,8 @@ function getProducts(array $args = [], int $count = -1) : array {
 function getProductsQuery(array $args = [], int $count = 9) : \WP_Query {
 	$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 	return new \WP_Query(array_merge([
-		'orderby' => 'post_date',
-		'order' => 'DESC',
+		'orderby' => 'title',
+		'order' => 'ASC',
 		'post_type' => 'products',
 		'posts_per_page' => $count,
 		'post_status' => 'publish',
